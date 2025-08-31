@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const { fortunes } = require("../data/fortunes");
 
 const generateLuckyNumbers = () => {
   const luckyNumbers = [];
@@ -16,4 +17,9 @@ const generateLuckyNumbers = () => {
   return luckyNumbers.sort((a, b) => a - b);
 };
 
-module.exports = { generateLuckyNumbers };
+const getFortune = () => {
+  const randomIndex = crypto.randomInt(0, fortunes.length); // 0 to fortunes.length
+  return fortunes[randomIndex];
+};
+
+module.exports = { generateLuckyNumbers, getFortune };

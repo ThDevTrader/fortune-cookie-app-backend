@@ -16,6 +16,7 @@ app.get("/", (_req, res, _next) => {
     message: "Fortune Cookie App Backend",
     endpoints: {
       "GET /api/lucky-numbers": "To get lucky numbers",
+      "GET /api/fortune": "To get fortune phrase",
     },
   });
 });
